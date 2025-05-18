@@ -1,0 +1,17 @@
+<div
+  #loader
+  id="loader"
+  [ngClass]="{
+    '-translate-y-full opacity-0 blur-md': hideLoader,
+    'translate-y-0 opacity-100 blur-0': !hideLoader
+  }"
+  class="fixed inset-0 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center z-50 transition-all duration-1000 ease-in-out overflow-hidden"
+>
+  <div class="flex items-center space-x-2 relative z-10">
+    <div
+      class="text-white text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight animate-pulseText"
+    >
+      <span>Career</span><span class="text-cyan-400">Sync</span>
+    </div>
+  </div>
+</div>

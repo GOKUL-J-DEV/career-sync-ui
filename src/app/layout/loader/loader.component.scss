@@ -1,0 +1,26 @@
+.animate-pulseText {
+  animation: pulseText 1.5s ease-in-out infinite;
+}
+@keyframes pulseText {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.7s ease-in-out forwards;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
