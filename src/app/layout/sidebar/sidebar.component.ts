@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, model } from '@angular/core';
-import { ClickOutsideDirective } from '../../directives/click-outside.directive';
+import { ClickOutsideDirective } from '../../shared/directives/click-outside.directive';
 
 @Component({
   selector: 'app-sidebar',
