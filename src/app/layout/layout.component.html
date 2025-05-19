@@ -1,7 +1,7 @@
 <app-loader></app-loader>
 <div class="flex h-screen overflow-hidden">
-  <app-sidebar></app-sidebar>
+  <app-sidebar [(isSidebarToggled)]="isSidebarToggled"></app-sidebar>
   <div class="flex-1 md:ml-64 transition-all duration-300">
-    <app-header></app-header>
+    <app-header [(isSidebarToggled)]="isSidebarToggled"></app-header>
   </div>
 </div>

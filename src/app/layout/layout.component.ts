@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 
 @Component({
@@ -10,4 +9,6 @@ import { LoaderComponent } from './loader/loader.component';
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
 })
-export class LayoutComponent {}
+export class LayoutComponent {
+  public isSidebarToggled = model<boolean>(false);
+}
