@@ -1,0 +1,82 @@
+<div class="">
+  <div class="flex justify-between items-center mb-4">
+    <h2 id="currentMonth" class="text-xl font-semibold">
+      {{ currentMonthDisplay }}
+    </h2>
+    <div>
+      <button
+        id="prevMonth"
+        class="px-3 py-1 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        (click)="navigateMonth(-1)"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          ></path>
+        </svg>
+      </button>
+      <button
+        id="nextMonth"
+        class="px-3 py-1 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        (click)="navigateMonth(1)"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7 7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="calendarGrid" class="grid grid-cols-7 gap-1">
+    <div
+      *ngFor="let day of weekdays"
+      class="text-center text-gray-600 text-sm md:text-base font-semibold"
+    >
+      {{ day }}
+    </div>
+    <div
+      *ngFor="let dayInfo of days; let i = index"
+      class="calendar-day relative aspect-square flex flex-col items-center justify-center rounded-lg p-1 hover:bg-gray-50 cursor-pointer animate-scale-in"
+      [style.animationDelay]="i * 0.01 + 's'"
+      [ngClass]="{
+        'bg-blue-100 border-2 border-blue-300': dayInfo.isToday
+      }"
+    >
+      @if(dayInfo.day !== 0){
+      <span
+        class="text-sm md:text-base"
+        [ngClass]="{ 'font-bold': dayInfo.day === 25 }"
+      >
+        {{ dayInfo.day }}
+      </span>
+      <div
+        *ngIf="dayInfo.hasEvent"
+        class="event-dot absolute bottom-1 h-1 w-1 md:h-1.5 md:w-1.5 rounded-full"
+        [ngClass]="dayInfo.hasEvent"
+        [title]="getEventTitle(dayInfo.day)"
+      ></div>
+      }@else {
+      <div class="aspect-square"></div>
+      }
+    </div>
+  </div>
+</div>
