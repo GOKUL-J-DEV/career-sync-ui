@@ -1,7 +1,14 @@
 <app-loader></app-loader>
-<div class="flex h-screen overflow-hidden">
-  <app-sidebar></app-sidebar>
-  <div class="flex-1 md:ml-64 transition-all duration-300">
-    <app-header></app-header>
+<div class="flex h-screen">
+  <app-sidebar [(isSidebarToggled)]="isSidebarToggled"></app-sidebar>
+
+  <div class="flex-1 flex flex-col md:ml-64 transition-all duration-300">
+    <!-- Header -->
+    <app-header [(isSidebarToggled)]="isSidebarToggled"></app-header>
+
+    <!-- Main content -->
+    <div class="flex-1 overflow-auto">
+      <app-dashboard></app-dashboard>
+    </div>
   </div>
 </div>

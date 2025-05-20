@@ -14,7 +14,7 @@ import {
   styleUrl: './loader.component.scss',
 })
 export class LoaderComponent implements OnInit, AfterViewInit {
-  hideLoader = false;
+  protected hideLoader = false;
   @ViewChild('loader') loaderElement: ElementRef | undefined;
 
   ngOnInit() {
@@ -28,6 +28,6 @@ export class LoaderComponent implements OnInit, AfterViewInit {
       if (this.loaderElement) {
         this.loaderElement.nativeElement.style.display = 'none';
       }
-    }, 3000); // 2000ms initial delay + 1000ms second delay
+    }, 3000);
   }
 }
